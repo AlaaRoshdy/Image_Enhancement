@@ -1,5 +1,6 @@
 import numpy as np
 import cv2
+from skimage import io, img_as_ubyte
 
 def show_images(images, titles):
     """
@@ -96,3 +97,6 @@ def hist_eq(img):
     equalized_img = new_pixels.reshape((img.shape[0],img.shape[1]))
     
     return equalized_img
+  
+def save_image(path, im):
+  return io.imsave(path, img_as_ubyte(im.copy()))

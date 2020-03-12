@@ -47,3 +47,13 @@ img_eq = h.hist_eq(img)
 img2_eq = h.hist_eq(img2)
 h.show_images([img, img_eq/255, img2, img2_eq/255],
             ["bad_kid", "bad_kid equalized", "dark", "dark equalized"])
+
+h.save_image('./results/salt_pepper_noise.jpg', noise)
+h.save_image('./results/median_filtered.jpg', filtered_img)
+h.save_image('./results/negative_transform.jpg', inv)
+h.save_image('./results/contrast_stretched.jpg', img_stretched)
+h.save_image('./results/contrast_stretched2.jpg', img2_stretched)
+h.save_image('./results/gamma_corrected.jpg', img_corr)
+h.save_image('./results/gamma_corrected2.jpg', img2_corr)
+h.save_image('./results/hist_equalized.jpg', np.clip((img_eq/255),0,1))
+h.save_image('./results/hist_equalized2.jpg', np.clip((img2_eq/255),0,1)) 
